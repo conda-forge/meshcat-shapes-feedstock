@@ -1,18 +1,18 @@
 {% set name = "meshcat-shapes" %}
-{% set version = "0.3.0" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/meshcat-shapes-{{ version }}.tar.gz
-  sha256: 814bc2d1dd09692abe98aeef858bd6406980e185eefa5e0650d5a41c2dba600b
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: e47169ac70321be8eaaa6b8cc2a1c7cdfec44a640fcd3be9399bb053e750aa7e
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
